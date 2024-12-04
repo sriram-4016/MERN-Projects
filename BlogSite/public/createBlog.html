@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Blog</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background-color: #f4f4f4;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 15px;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+
+        nav ul li {
+            margin-right: 15px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #fff;
+            font-weight: bold;
+            font-size: 16px;
+        }
+
+
+        main {
+            padding: 20px;
+            text-align: center;
+            margin: 50px 0;
+        }
+
+        section {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 50%;
+            margin: auto;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        a {
+            display: inline-block;
+            background-color: #3498db;
+            color: #fff;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-top: 8px;
+        }
+        a:hover {
+            background-color: #4bacec;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+        }
+
+        form label {
+            margin: 10px 0;
+            font-size: 18px;
+            color: #333;
+        }
+
+        form input,
+        form textarea {
+            width: 50%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+
+        form button {
+            background-color: #3498db;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 10px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+        #logo a{
+            background-color: orange;
+        }
+        #logo a:hover {
+            background-color: orangered;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <nav>
+            <div id="logo">
+                <ul>
+                    <li><a href="home">JuicyBlogs</a></li>
+                </ul>
+            </div>
+            <div>
+                <ul>
+                    <li><a href="allBlogs">All Blogs</a></li>
+                    <li><a href="viewBlogs">My Blogs</a></li>
+                    <li><a href="logout">Logout</a> </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section>
+            <div>
+                <h1>Create Your Blog</h1>
+
+                <!-- Blog Creation Form -->
+                <form action="createBlog" method="post">
+                    <label for="blogTitle">Title:</label>
+                    <input type="text" id="blogTitle" name="blogTitle" required>
+
+                    <label for="blogContent">Content:</label>
+                    <textarea id="blogContent" name="blogContent" rows="5" required></textarea>
+
+                    <label for="authorName">Your Name:</label>
+                    <input type="text" id="authorName" name="authorName" required>
+
+                    <button type="submit">Create Blog</button>
+                </form>
+
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2023 JuicyBlogs. All rights reserved.</p>
+    </footer>
+
+</body>
+
+</html>

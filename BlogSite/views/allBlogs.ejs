@@ -1,0 +1,165 @@
+<!-- views/allBlogs.ejs -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Blogs</title>
+
+    <style>
+        /* Global styles for body, header, nav, and footer */
+
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background-color: #f4f4f4;
+            text-align: center;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 15px;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+
+        nav ul li {
+            margin-right: 15px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #fff;
+            font-weight: bold;
+            font-size: 16px;
+        }
+
+        a {
+            display: inline-block;
+            background-color: #3498db;
+            color: #fff;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-top: 20px;
+        }
+        a:hover {
+            background-color: #4bacec;
+        }
+
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 10px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+        #logo a{
+            background-color: orange;
+        }
+        #logo a:hover {
+            background-color: orangered;
+        }
+
+        /* Styles specific to the main content */
+
+        main {
+            padding: 20px;
+            text-align: center;
+            margin: 50px 0;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        main h1 {
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        main ul {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        main li {
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            margin: 20px;
+            padding: 20px;
+            flex: 0 0 calc(33.3333% - 40px);
+        }
+
+        main h3 {
+            color: #3498db;
+        }
+
+        main p {
+            color: #555;
+        }
+    </style>
+</head>
+
+<body>
+
+
+    <header>
+        <nav>
+            <div id="logo">
+                <ul>
+                    <li><a href="home">JuicyBlogs</a></li>
+                </ul>
+            </div>
+            <div>
+                <ul>
+                    <li><a href="createBlog">Create Blog</a></li>
+                    <li><a href="logout">Logout</a> </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <h1>All Blogs</h1>
+        <ul>
+            <% blogs.forEach(blog=> { %>
+                <li>
+                    <h3>
+                        <%= blog.title %>
+                    </h3>
+                    <p>
+                        <%= blog.content %>
+                    </p>
+                    <p>Author: <%= blog.name %>
+                    </p>
+                </li>
+                <% }) %>
+        </ul>
+    </main>
+    <footer>
+        <p>&copy; 2023 JuicyBlogs. All rights reserved.</p>
+    </footer>
+</body>
+
+</html>
